@@ -13,7 +13,7 @@ const navLinks = (
       <NavLink href="/">Home</NavLink>
     </li>
     <li>
-      <NavLink href="/all-images">All Courses</NavLink>
+      <NavLink href="/all-courses">All Courses</NavLink>
     </li>
     <li>
       <NavLink href="/pricing">Pricing</NavLink>
@@ -28,7 +28,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const userInfo = authClient.useSession();
   const user = userInfo.data?.user;
-  console.log(user);
 
   const handleLogout = async () => {
     await authClient.signOut();

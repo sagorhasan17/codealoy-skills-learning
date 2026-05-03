@@ -12,6 +12,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {
@@ -30,7 +31,6 @@ const LoginPage = () => {
         autoClose: 2000,
         position: "top-center",
       });
-      console.log(data);
     } else {
       toast.error("Login error:", {
         autoClose: 2000,

@@ -1,6 +1,6 @@
+import ReactToastContainer from "@/components/ReactToastContainer";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import ReactToastContainer from "@/components/ReactToastContainer";
 
 const outFit = Outfit({
   variable: "--font-outfit",

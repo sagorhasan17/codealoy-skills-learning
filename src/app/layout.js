@@ -16,12 +16,10 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="light"
-      className={`${outFit.variable} h-full antialiased`}
+      className={`${outFit.variable}`}
       suppressHydrationWarning
     >
-      <body className={`min-h-full flex flex-col  ${outFit.className}`}>
-        {children}
-      </body>
+      <body className={`${outFit.className}`}>{children}</body>
     </html>
   );
 }

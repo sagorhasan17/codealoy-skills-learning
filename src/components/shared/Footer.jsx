@@ -2,13 +2,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-white/10">
-      <div className="absolute inset-0 -z-10 bg-linear-to-br from-slate-900 via-slate-950 to-black" />
-
-      <div className="absolute -top-25 -left-25 w-75 h-75 bg-[#5271FF]/20 blur-[120px] rounded-full -z-10" />
-      <div className="absolute -bottom-25 -right-25 w-75 h-75 bg-purple-500/20 blur-[120px] rounded-full -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 md:px-6 pt-16 pb-4 text-gray-300">
+    <footer className="bg-linear-to-br from-slate-900 via-slate-950 to-black text-gray-300 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           <div className="space-y-4">
             <h2 className="text-xl font-extrabold bg-linear-to-r from-[#5271FF] to-indigo-400 bg-clip-text text-transparent">
@@ -31,7 +26,7 @@ const Footer = () => {
                   href="/generate"
                   className="hover:text-[#5271FF] transition"
                 >
-                  Generate
+                  Web development
                 </Link>
               </li>
               <li>
@@ -39,7 +34,7 @@ const Footer = () => {
                   href="/all-photos"
                   className="hover:text-[#5271FF] transition"
                 >
-                  Gallery
+                  Data Science
                 </Link>
               </li>
               <li>
@@ -47,7 +42,7 @@ const Footer = () => {
                   href="/pricing"
                   className="hover:text-[#5271FF] transition"
                 >
-                  Pricing
+                  Mobile Development
                 </Link>
               </li>
             </ul>
@@ -110,7 +105,7 @@ const Footer = () => {
         <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent" />
 
         <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
-          <p>copyright- 2026 CodeAloy LTD. All rights reserved.</p>
+          <p>© 2026 CodeAloy LTD. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-[#5271FF] transition">

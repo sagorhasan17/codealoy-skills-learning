@@ -10,8 +10,8 @@ const CourseCard = ({ course }) => {
         <Image
           src={course.image}
           alt={course.title}
-          width={96}
-          height={96}
+          width={200}
+          height={200}
           className="rounded-lg object-cover w-full h-full"
         />
       </div>

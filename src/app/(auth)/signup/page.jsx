@@ -44,6 +44,11 @@ const RegisterPage = () => {
       });
     }
   };
+  const handleGoogleLogin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-linear-to-br from-slate-900 via-slate-950 to-black">
@@ -134,6 +139,7 @@ const RegisterPage = () => {
 
         {/* Google Login */}
         <Button
+          onClick={handleGoogleLogin}
           variant="bordered"
           className="w-full bg-white text-black hover:bg-gray-200 rounded-xl font-medium flex items-center justify-center gap-2"
         >

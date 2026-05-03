@@ -50,10 +50,15 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-3">
           {user ? (
             <div className="flex items-center gap-3">
+              <h2>
+                hello,{" "}
+                <span className="text-[#5271FF] font-bold">{user.name}</span>
+              </h2>
               <Avatar>
                 <Avatar.Image
                   alt={user.name || "User Avatar"}
-                  src={user?.image || "https://i.pravatar.cc/150?img=3"}
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
                 />
                 <Avatar.Fallback>{user.name?.charAt(0) || "U"}</Avatar.Fallback>
               </Avatar>
@@ -88,6 +93,10 @@ const Navbar = () => {
           <div className=" md:flex items-center gap-3">
             {user ? (
               <div className="flex items-center gap-3">
+                <h2>
+                  hello,{" "}
+                  <span className="text-[#5271FF] font-bold">{user.name}</span>
+                </h2>
                 <Avatar>
                   <Avatar.Image
                     alt={user.name || "User Avatar"}

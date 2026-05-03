@@ -39,6 +39,12 @@ const LoginPage = () => {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-linear-to-br from-slate-900 via-slate-950 to-black">
       <Card className="w-full max-w-md p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30">
@@ -94,6 +100,7 @@ const LoginPage = () => {
         </Form>
         {/* Google Login */}
         <Button
+          onClick={handleGoogleLogin}
           variant="bordered"
           className="w-full bg-white text-black hover:bg-gray-200 rounded-xl font-medium flex items-center justify-center gap-2"
         >

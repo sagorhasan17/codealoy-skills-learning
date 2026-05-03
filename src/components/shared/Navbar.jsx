@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
 import { TiThMenu } from "react-icons/ti";
@@ -25,6 +26,13 @@ const navLinks = (
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const userInfo = authClient.useSession();
+  const user = userInfo.data?.user;
+  console.log(user);
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-linear-to-b from-slate-900 via-slate-950 to-black text-white">
@@ -40,23 +48,74 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/signin">
-            <Button
-              variant="bordered"
-              className="border-[#5271FF] text-[#5271FF] hover:bg-[#5271FF] hover:text-white rounded-xl px-5"
-            >
-              SignIn
-            </Button>
-          </Link>
-
-          <Link href="/signup">
-            <Button className="bg-[#5271FF] text-white hover:bg-[#3f5ce0] rounded-xl px-5 shadow-lg shadow-[#5271FF]/30">
-              SignUp
-            </Button>
-          </Link>
+          {user ? (
+            <div className="flex items-center gap-3">
+              <Avatar>
+                <Avatar.Image
+                  alt={user.name || "User Avatar"}
+                  src={user?.image || "https://i.pravatar.cc/150?img=3"}
+                />
+                <Avatar.Fallback>{user.name?.charAt(0) || "U"}</Avatar.Fallback>
+              </Avatar>
+              <Button
+                onClick={handleLogout}
+                variant="bordered"
+                className="border-red-500 text-white hover:bg-gray-500 transition delay-100 bg-red-500 hover:text-white rounded-xl px-5 cursor-pointer"
+              >
+                SignOut
+              </Button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <Link href="/signin">
+                <Button
+                  variant="bordered"
+                  className="border-[#5271FF] text-[#5271FF] hover:bg-[#5271FF] hover:text-white rounded-xl px-5"
+                >
+                  SignIn
+                </Button>
+              </Link>
+              <Link href="/signup">
+                <Button className="bg-[#5271FF] text-white hover:bg-[#3f5ce0] rounded-xl px-5 shadow-lg shadow-[#5271FF]/30">
+                  SignUp
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
-
-        <div className="md:hidden">
+        {/* for mobile device */}
+        <div className="md:hidden flex items-center gap-3">
+          <div className=" md:flex items-center gap-3">
+            {user ? (
+              <div className="flex items-center gap-3">
+                <Avatar>
+                  <Avatar.Image
+                    alt={user.name || "User Avatar"}
+                    src={user?.image || "https://i.pravatar.cc/150?img=3"}
+                  />
+                  <Avatar.Fallback>
+                    {user.name?.charAt(0) || "U"}
+                  </Avatar.Fallback>
+                </Avatar>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3">
+                <Link href="/signin">
+                  <Button
+                    variant="bordered"
+                    className="border-[#5271FF] text-[#5271FF] hover:bg-[#5271FF] hover:text-white rounded-xl px-5"
+                  >
+                    SignIn
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button className="bg-[#5271FF] text-white hover:bg-[#3f5ce0] rounded-xl px-5 shadow-lg shadow-[#5271FF]/30">
+                    SignUp
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </div>
           <button
             onClick={() => setOpen(!open)}
             className="p-2 rounded-lg border border-gray-700"
@@ -71,20 +130,31 @@ const Navbar = () => {
           {navLinks}
 
           <div className="flex gap-2 pt-2">
-            <Link href="/signin" className="w-full">
+            {user ? (
               <Button
+                onClick={handleLogout}
                 variant="bordered"
-                className="w-full border-[#5271FF] text-[#5271FF] hover:bg-[#5271FF] hover:text-white rounded-xl"
+                className="border-red-500 text-white hover:bg-gray-500 transition delay-100 bg-red-500 hover:text-white rounded-xl px-5 cursor-pointer"
               >
-                SignIn
+                SignOut
               </Button>
-            </Link>
-
-            <Link href="/signup" className="w-full">
-              <Button className="w-full bg-[#5271FF] text-white hover:bg-[#3f5ce0] rounded-xl">
-                SignUp
-              </Button>
-            </Link>
+            ) : (
+              <>
+                <Link href="/signin">
+                  <Button
+                    variant="bordered"
+                    className="border-[#5271FF] text-[#5271FF] hover:bg-[#5271FF] hover:text-white rounded-xl px-5"
+                  >
+                    SignIn
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button className="bg-[#5271FF] text-white hover:bg-[#3f5ce0] rounded-xl px-5 shadow-lg shadow-[#5271FF]/30">
+                    SignUp
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       )}

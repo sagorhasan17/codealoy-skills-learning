@@ -12,10 +12,12 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const RegisterPage = () => {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -34,6 +36,7 @@ const RegisterPage = () => {
         autoClose: 2000,
         position: "top-center",
       });
+      router.push("/signin");
     } else {
       toast.error("Registration error:", {
         autoClose: 2000,

@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Card,
@@ -15,6 +16,27 @@ import { FaGoogle } from "react-icons/fa";
 const LoginPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const userData = Object.fromEntries(formData.entries());
+    const { email, password } = userData;
+    const { data, error } = await authClient.signIn.email({
+      email: email, // required
+      password: password, // required
+      rememberMe: true,
+      callbackURL: "/",
+    });
+    if (!error) {
+      toast.success("Login successful!", {
+        autoClose: 2000,
+        position: "top-center",
+      });
+      console.log(data);
+    } else {
+      toast.error("Login error:", {
+        autoClose: 2000,
+        position: "top-center",
+      });
+    }
   };
 
   return (

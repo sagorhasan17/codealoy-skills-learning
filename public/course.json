@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced JavaScript Mastery",
+    "instructor": "Sarah Smith",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Deep dive into modern JavaScript concepts and patterns.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "React & Next.js Complete Guide",
+    "instructor": "Michael Lee",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build scalable apps using React and Next.js.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    "category": "Development"
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Emily Johnson",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn the basics of user interface and experience design.",
+    "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e",
+    "category": "Design"
+  },
+  {
+    "id": 5,
+    "title": "Figma to Pro Design Workflow",
+    "instructor": "David Brown",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Master Figma and create stunning UI designs.",
+    "image": "https://images.unsplash.com/photo-1618788372246-79faff0c3742",
+    "category": "Design"
+  },
+  {
+    "id": 6,
+    "title": "Python for Data Science",
+    "instructor": "Sophia Wilson",
+    "duration": "22 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Analyze data and build models using Python.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    "category": "Data Science"
+  },
+  {
+    "id": 7,
+    "title": "Machine Learning A-Z",
+    "instructor": "James Anderson",
+    "duration": "25 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Comprehensive machine learning concepts and projects.",
+    "image": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72",
+    "category": "Data Science"
+  },
+  {
+    "id": 8,
+    "title": "Mobile App Development with Flutter",
+    "instructor": "Olivia Martinez",
+    "duration": "16 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Build cross-platform mobile apps using Flutter.",
+    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+    "category": "Development"
+  },
+  {
+    "id": 9,
+    "title": "Digital Marketing Essentials",
+    "instructor": "William Taylor",
+    "duration": "14 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn SEO, social media, and online marketing strategies.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    "category": "Marketing"
+  },
+  {
+    "id": 10,
+    "title": "Cyber Security Basics",
+    "instructor": "Daniel Thomas",
+    "duration": "13 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Understand security principles and protect systems.",
+    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
+    "category": "Security"
+  }
+]

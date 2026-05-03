@@ -1,14 +1,16 @@
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 
-const layout = ({ children }) => {
+const MainLayout = ({ children }) => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      {children}
+
+      <main className="flex-1">{children}</main>
+
       <Footer />
-    </>
+    </div>
   );
 };
 
-export default layout;
+export default MainLayout;

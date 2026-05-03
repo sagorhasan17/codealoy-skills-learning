@@ -2,32 +2,20 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-24">
-      <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
+    <footer className="relative border-t border-white/10">
+      <div className="absolute inset-0 -z-10 bg-linear-to-br from-slate-900 via-slate-950 to-black" />
 
-      {/* Background Layer */}
-      <div className="absolute inset-0 -z-10 bg-white dark:bg-[#0a0a0b]" />
+      <div className="absolute -top-25 -left-25 w-75 h-75 bg-[#5271FF]/20 blur-[120px] rounded-full -z-10" />
+      <div className="absolute -bottom-25 -right-25 w-75 h-75 bg-purple-500/20 blur-[120px] rounded-full -z-10" />
 
-      {/* Subtle Gradient Glow */}
-      <div
-        className="absolute inset-0 -z-10 bg-linear-to-tr 
-        from-purple-500/5 via-transparent to-blue-500/5 
-        dark:from-purple-500/10 dark:to-blue-500/10 blur-3xl"
-      />
-
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 pt-16 pb-4 text-gray-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
-                CodeAloy
-              </h2>
-            </div>
+            <h2 className="text-xl font-extrabold bg-linear-to-r from-[#5271FF] to-indigo-400 bg-clip-text text-transparent">
+              CodeAloy
+            </h2>
 
-            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-xs">
+            <p className="text-sm leading-relaxed text-gray-400 max-w-xs">
               A trusted elearning platform for students and professionals. We
               provide high-quality courses and resources to help you achieve
               your learning goals. Join us today and start your learning journey
@@ -35,16 +23,13 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
-              Product
-            </h3>
-            <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+            <h3 className="text-sm font-semibold text-white mb-4">Product</h3>
+            <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/generate"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-[#5271FF] transition"
                 >
                   Generate
                 </Link>
@@ -52,7 +37,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/all-photos"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-[#5271FF] transition"
                 >
                   Gallery
                 </Link>
@@ -60,7 +45,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/pricing"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-[#5271FF] transition"
                 >
                   Pricing
                 </Link>
@@ -68,80 +53,70 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4">
-              Company
-            </h3>
-            <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+            <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-black dark:hover:text-white transition"
-                >
+                <Link href="/about" className="hover:text-[#5271FF] transition">
                   About
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-black dark:hover:text-white transition"
+                  className="hover:text-[#5271FF] transition"
                 >
                   Contact
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/terms"
-                  className="hover:text-black dark:hover:text-white transition"
-                >
+                <Link href="/terms" className="hover:text-[#5271FF] transition">
                   Terms
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* CTA Block */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-black dark:text-white">
+            <h3 className="text-sm font-semibold text-white">
               Ready to get started?
             </h3>
 
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-400">
               Join thousands of users who are generating amazing images with
               CodeAloy. Sign up now and unleash your creativity!
             </p>
 
-            <Link
-              href="/signup"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-full 
-              bg-black text-white dark:bg-white dark:text-black 
-              text-sm font-medium transition-all duration-200 
-              hover:scale-[1.02] hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-white/10"
-            >
-              Sign Up
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/signup"
+                className="px-5 py-2.5 rounded-xl bg-[#5271FF] text-white text-sm font-medium 
+                shadow-lg shadow-[#5271FF]/30 hover:bg-[#3f5ce0] transition"
+              >
+                Sign Up
+              </Link>
+
+              <Link
+                href="/pricing"
+                className="px-5 py-2.5 rounded-xl border border-[#5271FF] text-[#5271FF] text-sm font-medium 
+                hover:bg-[#5271FF] hover:text-white transition"
+              >
+                View Pricing
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
+        <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-white/20 to-transparent" />
 
-        {/* Bottom */}
-        <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-          <p>© {new Date().getFullYear()} CodeAloy LTD. All rights reserved.</p>
+        <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+          <p>copyright- 2026 CodeAloy LTD. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link
-              href="/privacy"
-              className="hover:text-black dark:hover:text-white transition"
-            >
+            <Link href="/privacy" className="hover:text-[#5271FF] transition">
               Privacy
             </Link>
-            <Link
-              href="/terms"
-              className="hover:text-black dark:hover:text-white transition"
-            >
+            <Link href="/terms" className="hover:text-[#5271FF] transition">
               Terms
             </Link>
           </div>

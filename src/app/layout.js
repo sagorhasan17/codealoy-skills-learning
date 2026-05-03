@@ -1,5 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import ReactToastContainer from "@/components/ReactToastContainer";
 
 const outFit = Outfit({
   variable: "--font-outfit",
@@ -19,7 +20,10 @@ export default function RootLayout({ children }) {
       className={`${outFit.variable}`}
       suppressHydrationWarning
     >
-      <body className={`${outFit.className}`}>{children}</body>
+      <body className={`${outFit.className}`}>
+        {children}
+        <ReactToastContainer></ReactToastContainer>
+      </body>
     </html>
   );
 }

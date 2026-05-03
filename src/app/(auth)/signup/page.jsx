@@ -1,8 +1,10 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Card,
+  Description,
   FieldError,
   Form,
   Input,
@@ -11,10 +13,33 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const userData = Object.fromEntries(formData.entries());
+    const { name, email, password, profilePhoto } = userData;
+
+    const { data, error } = await authClient.signUp.email({
+      name: name, // required
+      email: email, // required
+      password: password, // required
+      image: profilePhoto,
+      callbackURL: "/",
+    });
+    if (!error) {
+      toast.success("Registration successful!", {
+        autoClose: 2000,
+        position: "top-center",
+      });
+    } else {
+      toast.error("Registration error:", {
+        autoClose: 2000,
+        position: "top-center",
+      });
+    }
   };
 
   return (
@@ -55,22 +80,38 @@ const RegisterPage = () => {
             />
             <FieldError />
           </TextField>
-
-          <TextField isRequired name="password" type="password">
-            <Label className="text-gray-300">Password</Label>
+          <TextField isRequired name="profilePhoto">
+            <Label className="text-gray-300">Profile Photo URL</Label>
             <Input
-              placeholder="Create password"
+              placeholder="Enter profile photo URL"
               className="rounded-xl bg-white/10 text-white placeholder:text-gray-400 border border-white/10 focus:border-[#5271FF]"
             />
             <FieldError />
           </TextField>
 
-          <TextField isRequired name="confirmPassword" type="password">
-            <Label className="text-gray-300">Confirm Password</Label>
-            <Input
-              placeholder="Repeat password"
-              className="rounded-xl bg-white/10 text-white placeholder:text-gray-400 border border-white/10 focus:border-[#5271FF]"
-            />
+          <TextField
+            isRequired
+            minLength={8}
+            name="password"
+            type="password"
+            validate={(value) => {
+              if (value.length < 8) {
+                return "Password must be at least 8 characters";
+              }
+              if (!/[A-Z]/.test(value)) {
+                return "Must include 1 uppercase letter";
+              }
+              if (!/[0-9]/.test(value)) {
+                return "Must include 1 number";
+              }
+              return null;
+            }}
+          >
+            <Label className="text-gray-300">Password</Label>
+            <Input placeholder="Enter your password" className="rounded-lg" />
+            <Description className="text-xs text-gray-500">
+              At least 8 characters, 1 uppercase & 1 number
+            </Description>
             <FieldError />
           </TextField>
 

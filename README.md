@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name: CodeAloy
+## Overview
+**CodeAloy** is a modern online learning platform designed to help users build real-world tech skills through structured courses, interactive content, and a clean user experience.
 
-## Getting Started
+The platform focuses on delivering high-quality learning in areas like web development, design, and modern technologies, making it easier for learners to grow their careers with practical knowledge.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Course Platform**
+  Browse and explore courses with a clean and modern UI.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Dynamic Landing Page**
+  Beautiful hero section with slider banner and engaging call-to-actions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Fast & Optimized Performance**
+  Built with modern technologies for speed and smooth experience.
 
-## Learn More
+- **Responsive Design**
+  Fully optimized for mobile, tablet, and desktop devices.
 
-To learn more about Next.js, take a look at the following resources:
+- **Modern UI/UX**
+  Clean layout with gradient design, glass effects, and interactive elements.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Next.js** — Full-stack React framework
+- **Tailwind CSS** — Styling and responsive design
+- **Component-Based Architecture** — Reusable UI components
+- **Swiper.js** — Modern slider for banner section
+- **Next Image Optimization** — Fast and optimized images
+- **React Icons** — Icon library for UI elements
+- **Heroui** — UI component library for React
+- **Better Auth** — Authentication management
+- **Vercel** — Deployment platform for fast and reliable hosting
+- **React Toastify** — Toast notifications for user feedback
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Goal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The goal of **CodeAloy** is to provide a modern and user-friendly learning platform where users can easily access courses, improve their skills, and stay motivated with an engaging interface.
+
+## Author
+
+**CodeAloy by Sagor Hossain**

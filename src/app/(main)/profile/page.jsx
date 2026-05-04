@@ -4,6 +4,7 @@ import UpdateProfileModal from "@/components/UpdateProfileModal";
 import { authClient } from "@/lib/auth-client";
 import { Button, Card } from "@heroui/react";
 import Image from "next/image";
+import { MdDone } from "react-icons/md";
 
 const ProfilePage = () => {
   const userSession = authClient.useSession();
@@ -38,7 +39,14 @@ const ProfilePage = () => {
               </p>
 
               <span className="inline-block mt-1 px-3 py-1 text-xs rounded-full bg-[#5271FF]/20 text-[#5271FF] border border-[#5271FF]/30">
-                {userInfo?.emailVerified ? "✔ Verified" : "Not Verified"}
+                {userInfo?.emailVerified ? (
+                  <span className="flex items-center gap-1">
+                    <MdDone />
+                    Verified
+                  </span>
+                ) : (
+                  "Not Verified"
+                )}
               </span>
             </div>
 

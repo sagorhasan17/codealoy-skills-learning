@@ -1,13 +1,15 @@
-import Banner from "@/components/Banner";
 import LearningTips from "@/components/LearningTips";
 import NewReleases from "@/components/NewReleases";
 import PopularCourses from "@/components/PopularCourses";
+import SwiperSliderBanner from "@/components/SwiperSliderBanner";
 import TopInstructors from "@/components/TopInstructors";
 
 export default function Home() {
   return (
     <div>
-      <Banner />
+      <div>
+        <SwiperSliderBanner />
+      </div>
       <PopularCourses />
       <NewReleases />
       <TopInstructors />

@@ -4,12 +4,14 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-full flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
       <Image
         src={BannerImage}
         alt="Banner"
         fill
         priority
+        sizes="100vw"
         className="object-cover"
       />
 
@@ -17,9 +19,10 @@ const Banner = () => {
 
       <div className="absolute inset-0 bg-linear-to-br from-[#5271FF]/30 via-black/40 to-black" />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6 text-center">
+      {/* Content */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm text-gray-200 mb-6 backdrop-blur">
-          🚀 Learn Smarter with CodeAloy
+          Learn Smarter with CodeAloy
         </div>
 
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white max-w-3xl mx-auto">

@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { BiEdit, BiUser } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 export function UpdateProfileModal() {
   const onSubmit = async (e) => {
@@ -12,6 +13,10 @@ export function UpdateProfileModal() {
     await authClient.updateUser({
       name: name,
       image: photoUrl,
+    });
+    toast.success("Profile updated successfully!", {
+      autoClose: 2000,
+      position: "top-center", 
     });
   };
   return (

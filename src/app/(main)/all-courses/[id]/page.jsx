@@ -1,3 +1,4 @@
+import CourseCurriculum from "@/components/CourseCurriculum";
 import { allCoursesData } from "@/lib/getDataFetching";
 import { Button } from "@heroui/react";
 import Image from "next/image";
@@ -75,6 +76,9 @@ const CourseDetailsPage = async ({ params }) => {
               </li>
             </ul>
           </div>
+        </div>
+        <div>
+          <CourseCurriculum />
         </div>
       </div>
     </section>

@@ -55,13 +55,19 @@ const AllCoursesPage = () => {
           </button>
         </div>
 
-        {/* Courses Layout */}
+        {/* Courses Lay */}
         {filteredCourses.length === 0 ? (
           <p className="text-center text-gray-400">No courses found</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+              <div
+                key={course.id}
+                className="group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl 
+              hover:border-[#5271FF]/40 transition-all duration-300"
+              >
+                <CourseCard course={course} />
+              </div>
             ))}
           </div>
         )}

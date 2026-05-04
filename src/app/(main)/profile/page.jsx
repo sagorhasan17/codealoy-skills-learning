@@ -1,5 +1,6 @@
 "use client";
 
+import UpdateProfileModal from "@/components/UpdateProfileModal";
 import { authClient } from "@/lib/auth-client";
 import { Button, Card } from "@heroui/react";
 import Image from "next/image";
@@ -42,10 +43,7 @@ const ProfilePage = () => {
             </div>
 
             <div className="flex gap-3 mt-6">
-              <Button className="bg-[#5271FF] text-white hover:bg-[#3f5ce0] rounded-xl px-5 shadow-lg shadow-[#5271FF]/30">
-                Edit Profile
-              </Button>
-
+              <UpdateProfileModal />
               <Button
                 onClick={handleLogout}
                 variant="bordered"
